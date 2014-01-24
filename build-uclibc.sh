@@ -339,7 +339,7 @@ if "${config_path}"/configure --target=${arche}-linux-uclibc \
         --disable-fast-install --with-endian=${ARC_ENDIAN} ${DISABLEWERROR} \
         --disable-multilib \
         --enable-languages=c --prefix="${tmp_install_dir}" \
-        --without-headers --enable-shared --disable-threads --disable-tls \
+        --without-headers --enable-shared  \
 	--disable-libssp --disable-libmudflap --without-newlib --disable-c99 \
 	--disable-libgomp ${CONFIG_EXTRA} >> "${logfile}" 2>&1
 then

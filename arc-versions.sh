@@ -78,10 +78,10 @@ done
 # matters if --auto-checkout is set.
 cgen="cgen:arc-1.0-dev"
 binutils="binutils:arc-2.23-dev"
-gcc="gcc:arc-4.8-dev"
+gcc="gcc:jeremy-tls-4.8"
 gdb="gdb:arc-7.5-dev"
 newlib="newlib:arc-2.0-dev"
-uclibc="uClibc:arc-mainline-dev"
+uclibc="uClibc:vineet-tls"
 
 if [ "x${uclibc_arg}" = "x--uclibc" ]
 then
