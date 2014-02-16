@@ -339,7 +339,7 @@ if "${config_path}"/configure --target=${arche}-linux-uclibc \
         --disable-fast-install --with-endian=${ARC_ENDIAN} ${DISABLEWERROR} \
         --disable-multilib \
         --enable-languages=c --prefix="${tmp_install_dir}" \
-        --without-headers --enable-shared --disable-threads --disable-tls \
+        --without-headers --enable-shared \
 	--disable-libssp --disable-libmudflap --without-newlib --disable-c99 \
 	--disable-libgomp ${CONFIG_EXTRA} >> "${logfile}" 2>&1
 then
@@ -525,7 +525,7 @@ then
 else
     echo "ERROR: GDB build was not successful. Please see "
     echo "       \""${logfile}"\" for details."
-    exit 1
+    #exit 1
 fi
 
 if make install-gdb >> "${logfile}" 2>&1
@@ -534,7 +534,7 @@ then
 else
     echo "ERROR: GDB install was not successful. Please see "
     echo "       \""${logfile}"\" for details."
-    exit 1
+    #exit 1
 fi
 
 # -----------------------------------------------------------------------------

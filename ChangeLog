@@ -1,3 +1,10 @@
+2014-02-16  Joern Rennecke  <joern.rennecke@embecosm.com>
+
+	* arc-versions.sh (binutils, gcc/ uclibc): Set to joern-tls-descriptors.
+	(build-elf32.sh): Don't try to build / install gdb.
+	* build-uclibc.sh: Remove --disable-threads --disable-tls.
+	Don't exit when gdb build fails.
+
 2014-02-07  Anton Kolesov  <anton.kolesov@synopsys.com>
 
 	* build-uclibc.sh: Build gdbserver with -O3 instead of -O0, use

@@ -222,9 +222,10 @@ echo "Building tools ..."
 build_path=$(calcConfigPath "${build_dir}")
 cd "${build_path}"
 log_path=$(calcConfigPath "${logfile}")
+#        all-target-libstdc++-v3 ${sim_build} all-gdb >> "${log_path}" 2>&1
 if make ${PARALLEL} all-build all-binutils all-gas all-ld all-gcc \
         all-target-libgcc all-target-libgloss all-target-newlib \
-        all-target-libstdc++-v3 ${sim_build} all-gdb >> "${log_path}" 2>&1
+        all-target-libstdc++-v3 ${sim_build} >> "${log_path}" 2>&1
 then
     echo "  finished building tools"
 else
@@ -240,8 +241,9 @@ echo "Installing tools ..."
 build_path=$(calcConfigPath "${build_dir}")
 cd "${build_path}"
 log_path=$(calcConfigPath "${logfile}")
+#    ${HOST_INSTALL}-gcc ${sim_install} install-gdb \
 if make ${HOST_INSTALL}-binutils ${HOST_INSTALL}-gas ${HOST_INSTALL}-ld \
-    ${HOST_INSTALL}-gcc ${sim_install} install-gdb \
+    ${HOST_INSTALL}-gcc ${sim_install} \
     install-target-libgloss install-target-newlib install-target-libgcc \
     install-target-libstdc++-v3 \
     >> "${log_path}" 2>&1
