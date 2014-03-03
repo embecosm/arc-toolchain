@@ -51,8 +51,8 @@ LINUX_DEFCONFIG=
 LINUX_TREE=linux
 # ARC_INITRAMFS=arc_initramfs_10_2012_dyn_dev.tgz
 # ARC_INITRAMFS=arc_initramfs_08_2012_gnu_4_4_ABI_v2.tgz
-ARC_INITRAMFS=ramfs-abi-v3-gcc-4.4.tar.gz
-ARC_UNPACKED_NAME=arc_initramfs_22_abi-v3-0.9.34
+ARC_INITRAMFS=arc_initramfs_12_2013_gnu_4_8_ABI_v3.tgz
+#ARC_UNPACKED_NAME=arc_initramfs_22_abi-v3-0.9.34
 
 # Generic release set up, which we'll share with sub-scripts. This defines
 # (and exports RELEASE, LOGDIR and RESDIR, creating directories named $LOGDIR
