@@ -77,11 +77,11 @@ done
 # the development versions for the ARC 4.4 tool chain release. Only actually
 # matters if --auto-checkout is set.
 cgen="cgen:arc-1.0-dev"
-binutils="binutils:joern-arc2.23-tls"
-gcc="gcc:joern-arc-4.8-dev-tls"
+binutils="binutils:arc-2.23-tls"
+gcc="gcc:arc-4.8-tls"
 gdb="gdb:arc-7.5-dev"
 newlib="newlib:arc-2.0-dev"
-uclibc="uClibc:vineet-tls"
+uclibc="uClibc:arc-mainline-dev-nptl"
 
 if [ "x${uclibc_arg}" = "x--uclibc" ]
 then
