@@ -303,3 +303,5 @@ fi
 
 echo "DONE  ELF32: $(date)" >> "${log_path}"
 echo "DONE  ELF32: $(date)"
+
+# vim: noexpandtab sts=4 ts=8:

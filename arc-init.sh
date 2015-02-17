@@ -279,3 +279,5 @@ mkdir -p "$RESDIR"
 # Export the environment variables
 export LOGDIR
 export RESDIR
+
+# vim: noexpandtab sts=4 ts=8:
