@@ -266,3 +266,16 @@ else
         printf "${path1}"
     }
 fi
+
+# Create a common log directory for all logs in this and sub-scripts
+LOGDIR="$ARC_GNU/logs"
+mkdir -p "$LOGDIR"
+
+# Create a common results directory in which sub-directories will be created
+# for each set of tests.
+RESDIR="$ARC_GNU/results"
+mkdir -p "$RESDIR"
+
+# Export the environment variables
+export LOGDIR
+export RESDIR
