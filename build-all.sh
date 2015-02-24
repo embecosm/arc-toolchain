@@ -48,6 +48,7 @@
 #                  [--strip | --no-strip]
 #                  [--release-name <release>]
 #                  [--tls | --no-tls]
+#                  [--toolchain-config <config>]
 
 # This script is a convenience wrapper to build the ARC GNU 4.4 tool
 # chains. It utilizes Joern Rennecke's build-elf32.sh script and Bendan
@@ -251,6 +252,17 @@
 #     support threading and thread local storage (TLS).
 #     (default --no-tls)
 
+# --toolchain-config <config>
+
+#     Allows to override default toolchain configuration. Currently that
+#     affects only git revisions/branches/tags that will be used to build
+#     toolchain, so this option doesn't have any effect if --no-auto-checkout
+#     is specified. Argument may take two forms - if it contains slash, then it
+#     is considered as file path and is used as-is; otherwise it is considered
+#     as a configuration name and will be used as toolchain/config/<cfg
+#     name>.sh. Build will be aborted if specified configuration doesn't exist.
+#     Default value is "arc-dev".
+
 # Where directories are specified as arguments, they are relative to the
 # current directory, unless specified as absolute names.
 
@@ -323,6 +335,7 @@ SED=sed
 RELEASE_NAME=
 is_tarball=
 TLS_SUPPORT="no"
+TOOLCHAIN_CONFIG=arc-dev
 
 # Default multilib usage and conversion for toolchain building
 case "x${DISABLE_MULTILIB}" in
@@ -519,6 +532,11 @@ case ${opt} in
         TLS_SUPPORT="no"
         ;;
 
+    --toolchain-config)
+	shift
+	TOOLCHAIN_CONFIG="$1"
+	;;
+
     ?*)
 	echo "Unknown argument $1"
 	echo
@@ -550,6 +568,7 @@ case ${opt} in
 	echo "                      [--sed-tool <tool>]"
 	echo "                      [--release-name <release>]"
 	echo "                      [--tls | --no-tls]"
+	echo "                      [--toolchain-config <config>]"
 	exit 1
 	;;
 
@@ -717,6 +736,7 @@ fi
 export SED
 export RELEASE_NAME
 export TLS_SUPPORT
+export TOOLCHAIN_CONFIG
 
 # Set up a logfile
 logfile="${LOGDIR}/all-build-$(date -u +%F-%H%M).log"
