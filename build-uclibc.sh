@@ -174,7 +174,6 @@ else
 fi
 
 arch=arc
-unified_src_abs="$(echo "${PWD}")"/${UNISRC}
 triplet=${arche}-snps-linux-uclibc
 
 if [ $ISA_CPU = arc700 ]
