@@ -309,7 +309,8 @@ fi
 make distclean >> "${logfile}" 2>&1 || true 
 
 # Copy the defconfig file to a temporary location
-TEMP_DEFCFG=`mktemp --tmpdir=${DEFCFG_DIR} XXXXXXXXXX_defconfig`
+TEMP_DEFCFG=${DEFCFG_DIR}/arc_custom_temp_defconfig
+touch $TEMP_DEFCFG
 if [ ! -f "${TEMP_DEFCFG}" ]
 then
     echo "ERROR: Failed to create temporary defconfig file."
@@ -410,7 +411,8 @@ echo "===================" >> "${logfile}"
 cd ${uclibc_build_dir}
 
 # Copy the defconfig file to a temporary location
-TEMP_DEFCFG=`mktemp --tmpdir=${DEFCFG_DIR} XXXXXXXXXX_defconfig`
+TEMP_DEFCFG=${DEFCFG_DIR}/arc_custom_temp_defconfig
+touch $TEMP_DEFCFG
 if [ ! -f "${TEMP_DEFCFG}" ]
 then
     echo "ERROR: Failed to create temporary defconfig file."
